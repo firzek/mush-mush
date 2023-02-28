@@ -11,6 +11,7 @@ const Rotas = () => {
         <Route element={<All.Home />} path="/" exact />
         <Route element={<All.Contato />} path="/contato" />
         <Route element={<All.Shopping />} path="/shopping" />
+        <Route element={<All.CreateAccount />} path="/criarconta" />
       </Routes>
     </BrowserRouter>
   )

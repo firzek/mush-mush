@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Wrapper, HeaderOptions, HeaderContainer, IconContainer } from './style'
 import ShoppingCart from '../../assets/svg-components/shopping-cart-icon'
@@ -41,6 +41,9 @@ const Header = () => {
         <IconContainer onClick={() => setCartIsOpen(!cartIsopen)}>
           <ShoppingCart />
         </IconContainer>
+        <Link to={"/login"}>Entre</Link>
+        <spam>ou</spam>
+        <Link to={"criarconta"}>Crie uma conta</Link>
       </HeaderContainer>
       {cartIsopen ? <Cart /> : null}
     </Wrapper>
