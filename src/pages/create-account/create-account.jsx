@@ -2,6 +2,7 @@ import React, { useState,useEffect,useCallback } from "react"
 import Input from "../../components/input/input"
 import * as S from './style'
 import axios from "axios"
+import { userPost } from "../../userCases/account-requests"
 
 
 const CreateAccount=()=>{
@@ -74,9 +75,9 @@ const CreateAccount=()=>{
         <Input label="Cidade" handleChange={(e)=>{setAccountData({...accountData,city:e.target.value})}} value={accountData.city} type="text"></Input>
         <Input label="Estado" handleChange={(e)=>{setAccountData({...accountData,state:e.target.value})}} value={accountData.state} type="text"></Input>
         <Input label="E-mail" handleChange={(e)=>{setAccountData({...accountData,email:e.target.value})}} value={accountData.email} type="email"></Input>
-        <Input label="Senha" handleChange={(e)=>{setAccountData({...accountData,nome:e.target.value})}} value={accountData.password} type="text"></Input>
+        <Input label="Senha" handleChange={(e)=>{setAccountData({...accountData,password:e.target.value})}} value={accountData.password} type="text"></Input>
         <Input label="Confirmar senha" type="text"></Input>
-        <button onClick={()=>{console.log(accountData)}}>Criar conta</button>
+        <button onClick={()=>{console.log(userPost({...accountData,cep:cep,type:'u'}))}}>Criar conta</button>
     </S.Wrapper>
 
 }
